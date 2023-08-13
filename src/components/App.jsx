@@ -34,11 +34,11 @@ export class App extends Component {
   };
 
   onDelete = id => {
-    const resultSortedContacts = this.state.contacts.filter(
-      contact => contact.id !== id
-    );
     this.setState(prevState => {
-      return { ...prevState, contacts: [...resultSortedContacts] };
+      const contacts = prevState.contacts.filter(contact => contact.id !== id);
+      return {
+        contacts,
+      };
     });
   };
 
